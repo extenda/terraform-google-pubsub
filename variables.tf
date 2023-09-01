@@ -48,13 +48,13 @@ variable "push_subscriptions" {
 }
 
 variable "pull_subscriptions" {
-  type        = list(map(any))
+  type        = list(map(string))
   description = "The list of the pull subscriptions."
   default     = []
 }
 
 variable "bigquery_subscriptions" {
-  type        = list(map(any))
+  type        = list(map(string))
   description = "The list of the bigquery push subscriptions."
   default     = []
 }

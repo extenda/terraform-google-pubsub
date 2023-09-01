@@ -281,13 +281,6 @@ resource "google_pubsub_subscription" "pull_subscriptions" {
     }
   }
 
-  dynamic "no_wrapper" {
-    for_each = lookup(each.value, "no_wrapper", null) != null ? [lookup(each.value, "no_wrapper", null)] : []
-    content {
-      write_metadata = lookup(no_wrapper.value, "write_metadata", null)
-    }
-  }
-
   depends_on = [
     google_pubsub_topic.topic,
   ]
@@ -346,13 +339,6 @@ resource "google_pubsub_subscription" "bigquery_subscriptions" {
     content {
       maximum_backoff = lookup(each.value, "maximum_backoff", "")
       minimum_backoff = lookup(each.value, "minimum_backoff", "")
-    }
-  }
-
-  dynamic "no_wrapper" {
-    for_each = lookup(each.value, "no_wrapper", null) != null ? [lookup(each.value, "no_wrapper", null)] : []
-    content {
-      write_metadata = lookup(no_wrapper.value, "write_metadata", null)
     }
   }
 
