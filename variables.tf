@@ -42,19 +42,19 @@ variable "topic_labels" {
 }
 
 variable "push_subscriptions" {
-  type        = list(map(string))
+  type        = list(map(any))
   description = "The list of the push subscriptions."
   default     = []
 }
 
 variable "pull_subscriptions" {
-  type        = list(map(string))
+  type        = list(map(any))
   description = "The list of the pull subscriptions."
   default     = []
 }
 
 variable "bigquery_subscriptions" {
-  type        = list(map(string))
+  type        = list(map(any))
   description = "The list of the bigquery push subscriptions."
   default     = []
 }
