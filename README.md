@@ -1,6 +1,5 @@
 # terraform-google-pubsub
 
-
 This module makes it easy to create Google Cloud Pub/Sub topic and subscriptions associated with the topic.
 
 ## Compatibility
